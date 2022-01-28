@@ -3,17 +3,16 @@
 using namespace std;
 
 //Implementation of stack data structure using vector
-
-
-
+template<typename T> //, typename U>
 //Stack Class 
 class Stack{
 private:
-	vector<int> v;
+	vector<T> v;
+	//vector<U> v2;
 
 
 public:
-	void push(int data){
+	void push(T data){
 		v.push_back(data);
 	}
 
@@ -27,7 +26,7 @@ public:
 		}
 	}
 
-	int top(){
+	T top(){
 		return v[v.size()-1];
 	}
 };
@@ -39,10 +38,10 @@ public:
 
 int main(){
 
-	Stack s;
+	Stack<char> s;
 
-	for(int i=1;i<=5;i++){
-		s.push(i*i);
+	for(int i=65;i<=70;i++){
+		s.push(i);
 	}
 
 	//Try to print the content of the stack by poppin each element
